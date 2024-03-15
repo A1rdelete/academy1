@@ -80,3 +80,39 @@ for day in range(365): #проходимось по всім дням у роц�
     if nick.alive == False:
         break
     nick.live(day)
+
+class Human:
+    def __init__(self, name="Human"):
+        self.name = name
+class Auto:
+    def __init__(self, brand):
+        self.brand = brand
+        self.passengers = [] #список
+    def add_passenger(self, human):
+        self.passengers.append(human)
+    # def add_passenger(self, *args):
+    #     for passenger in args:
+    #         self.passengers.append(passenger)
+    def print_passengers_names(self):
+        if self.passengers!= []:
+            print(f"Names of {self.brand} passengers:")
+            for passenger in self.passengers:
+                print(passenger.name)
+        else:
+            print(f"There are no passengersin {self.brand}")
+
+class Pet:
+    def __init__(self, poroda):
+        self.poroda = poroda
+        self.hazain = []
+    def add_hazain(self, human):
+        self.hazain.append(human)
+
+
+nick = Human("Nick") #екземпляр класу (об'єкт)
+kate = Human("Kate") #екземпляр класу (об'єкт)
+car = Auto("Mercedes") #екземпляр класу (об'єкт)
+
+car.add_passenger(nick)  #зв'язок класів
+car.add_passenger(kate)
+car.print_passengers_names()
