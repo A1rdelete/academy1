@@ -25,7 +25,7 @@
 #nick = Student()
 #nick.printer()
 
-#import random
+import random
 class Student:
     def __init__(self, name):  #створюємо студента
         self.name = name
